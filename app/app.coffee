@@ -21,6 +21,7 @@ app.configure ->
     src: "#{__dirname}/assets"
   )
   app.use express.static "#{__dirname}/public"
+  app.use('/assets/vendor/bootstrap/dist', express.static ("#{__dirname}/assets/vendor/bootstrap/dist"))
   require('./middleware/404')(app)
 
 app.configure 'development', ->

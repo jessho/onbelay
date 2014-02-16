@@ -1,0 +1,23 @@
+{
+  "name": "onbelay",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jessho/onbelay",
+  "authors": [
+    "Jess Ho <jess.c.ho@gmail.com>",
+    "Cai GoGwilt <gogwilt@gmail.com>"
+  ],
+  "description": "Web app to find climbing partners",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1"
+  }
+}
