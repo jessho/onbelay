@@ -23,7 +23,11 @@ autoload = (app, dir, camelCase) ->
     if fs.lstatSync(pathname).isDirectory()
       autoload app, pathname, camelCase
     else
-      loadedModule = require(pathname)?(app)
+      module = require(pathname)
+      if _.isFunction(module)
+        loadedModule = module?(app)
+      unless loadedModule?
+        loadedModule = module
       modulename = filenameToModulename filename, camelCase
       app.locals[modulename] = loadedModule
 
