@@ -11,5 +11,3 @@ module.exports =
     @removeAll: ->
       users = []
 
-    @all: ->
-      users
