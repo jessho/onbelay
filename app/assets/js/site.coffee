@@ -1,5 +1,4 @@
-#= require js/vendor/jquery.js
-#= require js/vendor/bootstrap.js
+#= require js/vendor_libraries.coffee
 #= require_tree shared
 
 $ ->
