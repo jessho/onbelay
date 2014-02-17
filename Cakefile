@@ -22,7 +22,12 @@ task 'test', 'run the tests', ->
     '--recursive'
     './app/test'
   ]
-  spawn mocha, args, stdio: 'inherit'
+  spawn(mocha, args, stdio: 'inherit').on 'exit', (code) ->
+    if code isnt 0
+      console.log 'TESTS FAILED'
+      process.exit 1
+    else
+      console.log 'TESTS SUCCEEDED'
 
 task 'update', 'update all packages and run npmedge', ->
   (spawn 'npm', ['install', '-q'], stdio: 'inherit').on 'exit', ->
